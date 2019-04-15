@@ -2,6 +2,9 @@
 A Wire based MPU6050 library intended for ARM Cortex STM32 devices
 ## Usage
 ```c
+#include "MPU6050.h"
+#include "Wire.h"
+
 MPU6050 thingy;
 
 void setup(){
