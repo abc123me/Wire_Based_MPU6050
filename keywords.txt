@@ -1,0 +1,44 @@
+#######################################
+# Syntax Coloring Map For MPU6050
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+MPU6050						KEYWORD1
+Axis						KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setAccelerationRange		KEYWORD2
+setGyroscopeRange			KEYWORD2
+readAccelRaw				KEYWORD2
+readGyroRaw					KEYWORD2
+readAccelG					KEYWORD2
+readAccelMS					KEYWORD2
+readGyroDPS					KEYWORD2
+readTempC					KEYWORD2
+readTempF					KEYWORD2
+getAccelerationMagnitude	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+# Chipsets
+MPU6050_ACCEL_RANGE_2G		LITERAL1
+MPU6050_ACCEL_RANGE_4G		LITERAL1
+MPU6050_ACCEL_RANGE_8G		LITERAL1
+MPU6050_ACCEL_RANGE_16G		LITERAL1
+MPU6050_GYRO_RANGE_250DPS	LITERAL1
+MPU6050_GYRO_RANGE_500DPS	LITERAL1
+MPU6050_GYRO_RANGE_1000DPS	LITERAL1
+MPU6050_GYRO_RANGE_2000DPS	LITERAL1
+ONE_G						LITERAL1
+XAxis						LITERAL1
+YAxis						LITERAL1
+ZAxis						LITERAL1
+WAxis						LITERAL1
