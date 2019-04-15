@@ -24,17 +24,18 @@ void printCoord(float* buf){
 
 void loop(){
   float buf[3];
-  accel.readGyroDPS(buf);
+  thingy.readGyroDPS(buf);
   Serial.print("\e[0;0H\e[2J\e[H");
   Serial.print("Gyration: ");
   printCoord(buf);
   Serial.println();
-  accel.readAccelG(buf);
+  thingy.readAccelG(buf);
   Serial.print("Acceleration: ");
   printCoord(buf);
   Serial.println();
-  Serial.print("Temperature: " + String(accel.readTempC()) + "C (" + String(accel.readTempF()) + "F)");
+  Serial.print("Temperature: " + String(thingy.readTempC()) + "C (" + String(thingy.readTempF()) + "F)");
   Serial.println();
   delay(250);
 }
+
 ```
