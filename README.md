@@ -1,4 +1,4 @@
-# Wire_Based_MPU6050
+# Wire based MPU6050 library (works with STM32)
 A Wire based MPU6050 library intended for ARM Cortex STM32 devices
 ## Usage
 ```c
