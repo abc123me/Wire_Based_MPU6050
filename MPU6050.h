@@ -11,6 +11,7 @@
 #define _MPU6050_ACCEL_CONFIG_ADDR  0x1C
 #define _MPU6050_GYRO_CONFIG_ADDR   0x1B
 #define _MPU6050_WHO_AM_I_ADDR      0x75
+#define _MPU6050_INTERRUPT_EN_ADDR  0x38
 
 #define ONE_G 9.80665
 #define MPU6050_ACCEL_RANGE_2G      0b00
@@ -45,8 +46,10 @@ public:
     wakeup();
     setGyroscopeRange(MPU6050_GYRO_RANGE_250DPS);
     setAccelerationRange(MPU6050_ACCEL_RANGE_4G);
+    setInterruptsEnabled(false);
   }
   bool test();
+  void setInterruptsEnabled(bool en);
   void setAccelerationRange(uint8_t range);
   void setGyroscopeRange(uint8_t range);
   void readAccelRaw(int16_t* buf){ reqCoord(buf, _MPU6050_ACCEL_START); }

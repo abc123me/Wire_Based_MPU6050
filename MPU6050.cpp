@@ -1,5 +1,13 @@
 #include "MPU6050.h"
 
+
+void MPU6050::setInterruptsEnabled(bool en){
+  Wire.beginTransmission(address);
+  Wire.write(_MPU6050_INTERRUPT_EN_ADDR);
+  if(en) Wire.write(1);
+  else Wire.write(0);
+  Wire.endTransmission();
+}
 int16_t MPU6050::reqSingle(uint8_t reg) {
   Wire.beginTransmission(address);
   Wire.write(reg);
