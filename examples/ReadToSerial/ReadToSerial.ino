@@ -1,4 +1,3 @@
-//(C) Jeremiah Lowe 2019-2020
 #include "MPU6050.h"
 #include "Wire.h"
 
