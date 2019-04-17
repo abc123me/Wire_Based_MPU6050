@@ -8,7 +8,6 @@ MPU6050 thingy; //Declare the MPU6050 device
 
 void setup(){
   lcd.begin(16, 2);
-  mpu6050init();
   thingy.begin();
   if(!thingy.test()) { //Contacts the MPU6050 and checks its id to see if its on the bus
     lcd.setCursor(0, 0); 
