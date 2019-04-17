@@ -9,7 +9,7 @@ void setup(){
   thingy.begin(); //Initialize it, you can pass in a speed in hertz
   //thingy.begin(1000); //Like so
   if(!thingy.test()) //Contacts the MPU6050 and checks its id to see if its on the bus
-    Serial.println("No MPU6050 on I2C bus");
+    Serial.println("No MPU6050 on I2C bus, please check your connection!");
   Serial.println("Ready!");
 }
 
