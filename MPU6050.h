@@ -4,6 +4,9 @@
 #include "stdint.h"
 #include "stdbool.h"
 #include "Wire.h"
+#include "math.h"
+
+#pragma message "Universal MPU6050 library (c) Jeremiah Lowe 2019-2020"
 
 #define _MPU6050_GYRO_START         0x43
 #define _MPU6050_ACCEL_START        0x3B
@@ -40,14 +43,15 @@ public:
   MPU6050(){
     address = 0x68;
   };
-  void begin(){
-    Wire.begin();
-    Wire.setClock(400000);
+  void begin(uint32_t speed){
+	Wire.begin();
+    Wire.setClock(speed);
     wakeup();
     setGyroscopeRange(MPU6050_GYRO_RANGE_250DPS);
     setAccelerationRange(MPU6050_ACCEL_RANGE_4G);
     setInterruptsEnabled(false);
   }
+  void begin(){ begin(10000); }
   bool test();
   void setInterruptsEnabled(bool en);
   void setAccelerationRange(uint8_t range);
