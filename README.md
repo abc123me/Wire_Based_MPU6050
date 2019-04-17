@@ -37,5 +37,7 @@ void loop(){
   Serial.println();
   delay(250);
 }
-
 ```
+## Boards tested
+ - Arduino Uno (ATmega328P) @ 16MHz w/ 10KHz I2C
+ - STM32F103 (32K) @ 72MHz w/ 400KHz I2C
