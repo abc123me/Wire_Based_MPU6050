@@ -1,16 +1,19 @@
+//(C) Jeremiah Lowe 2019-2020
 #include "MPU6050.h"
 #include "Wire.h"
 
-MPU6050 thingy;
+MPU6050 thingy; //Declare the MPU6050 device
 
 void setup(){
   Serial.begin(9600);
-  thingy.begin();
-  if(!thingy.test()) Serial.println("Something probably is broke however i'm not sure?");
+  thingy.begin(); //Initialize it, you can pass in a speed in hertz
+  //thingy.begin(1000); //Like so
+  if(!thingy.test()) //Contacts the MPU6050 and cecks its id
+    Serial.println("No MPU6050 on I2C bus");
   Serial.println("Ready!");
 }
 
-void printCoord(float* buf){
+void printCoord(float* buf){ //Prints 3 bytes starting at buf
   Serial.print(buf[0]);
   Serial.print(", ");
   Serial.print(buf[1]);
@@ -19,13 +22,14 @@ void printCoord(float* buf){
 }
 
 void loop(){
-  float buf[3];
-  thingy.readGyroDPS(buf);
+  float buf[3]; //12 byte buffer for storing results
+  thingy.readGyroDPS(buf); //Reads the gyrometer in degrees per second
   Serial.print("\e[0;0H\e[2J\e[H");
   Serial.print("Gyration: ");
-  printCoord(buf);
+  printCoord(buf); 
   Serial.println();
-  thingy.readAccelG(buf);
+  thingy.readAccelG(buf); //Reads the accelerometer in G
+  //thiny.readAccelMPS(buf); //Same thing in meters per second per second
   Serial.print("Acceleration: ");
   printCoord(buf);
   Serial.println();
