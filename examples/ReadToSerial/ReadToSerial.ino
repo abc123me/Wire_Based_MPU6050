@@ -32,4 +32,3 @@ void loop(){
   Serial.print("Temperature: " + String(thingy.readTempC()) + "C (" + String(thingy.readTempF()) + "F)");
   Serial.println();
   delay(250);
-}
