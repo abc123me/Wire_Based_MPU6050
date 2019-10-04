@@ -71,13 +71,13 @@ Also, If a MPU9520 is connected and you attempt to use it as an MPU6050 the `tes
 ### Valid AK8963 modes
 ```c
 enum AK8963Mode { 
-	Shutdown = 0, 
-	Single = 0b0001, 
-	Cont100Hz = 0b0110, 
-	Cont8Hz = 0b0010, 
-	SelfTest = 0b1000, 
-	ExtTrig = 0b0100, 
-	FuseROM = 0b1111
+	Shutdown = 0,       // The sensor is offline, values got in this state are garbage
+	Single = 0b0001,    // The sensor polls when asked (via readMagnetometer), then enters shutdown
+	Cont100Hz = 0b0110, // The sensor polls 100 times per second
+	Cont8Hz = 0b0010,   // The sensor polls 8 times per second
+	SelfTest = 0b1000,  // Self-Testing mode (NOT YET IMPLEMENTED)
+	ExtTrig = 0b0100,   // The sensor polls upon external trigger
+	FuseROM = 0b1111    // The sensor is in ROM mode allowing you to view the ROM (NOT YET IMPLEMENTED)
 };
 ```
 ### Porting from older versions
