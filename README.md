@@ -1,8 +1,8 @@
 # Wire based MPUxxxx library (works with STM32)
 A Wire based MPUxxxx library intended for ARM Cortex STM32 devices, but since it uses the `Wire.h` library it works with ***EVERYTHING*** and yes, you can use it to take over the world!
 ## Usage
- 1. Download as ZIP
- 2. Unzip and install into your arduino libraries folder
+ 1. Download the [latest release](https://github.com/abc123me/Wire_Based_MPU6050/releases)
+ 2. Extract and install into your arduino libraries folder
  3. Select Examples/MPU6050/ and experiment with them
 ## Boards tested
  - Arduino Uno (ATmega328P) @ 16MHz w/ 10KHz I2C
