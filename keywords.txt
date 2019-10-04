@@ -25,6 +25,16 @@ readTempC					KEYWORD2
 readTempF					KEYWORD2
 getAccelerationMagnitude	KEYWORD2
 setInterruptsEnabled		KEYWORD2
+readMagnetometer			KEYWORD2
+setMagnetometerMode			KEYWORD2
+getMagnetometerMode			KEYWORD2
+isMagnetometerReady 		KEYWORD2
+begin						KEYWORD2
+test						KEYWORD2
+getFeatureMask				KEYWORD2
+setBypass					KEYWORD2
+bypassOn					KEYWORD2
+whoAmI						KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
