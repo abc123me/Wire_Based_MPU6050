@@ -82,4 +82,4 @@ enum AK8963Mode {
 ```
 ### Porting from older versions
 The main header file is no longer `MPU6050.h`, it is now `MPU.h`. This means that any
-instances of `#include "MPU6050.H"` will have to be replaced with `#incluude "MPU.h"`
+instances of `#include "MPU6050.H"` will have to be replaced with `#include "MPU.h"`
