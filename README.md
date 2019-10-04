@@ -39,6 +39,8 @@ bool isMagnetometerReady();                //Returns true if the magnetometer ha
 ***PLEASE NOTE*** that in order to use the AK8963 inside of the MPU9250 you ***MUST*** 
 enable the bypass feature, otherwise the I2C commands sent to the AK8963 will go 
 to the external I2C bus instead of the AK8963's I2C bus!
+
+Also, If a MPU9520 is connected and you attempt to use it as an MPU6050 the `test` function will fail
 ### Valid sensor ranges / compile constants
 ```c
 #define ONE_G                      //One G (on Earth)
@@ -73,3 +75,6 @@ enum AK8963Mode {
 	FuseROM = 0b1111
 };
 ```
+### Porting from older versions
+The main header file is no longer `MPU6050.h`, it is now `MPU.h`. This means that any
+instances of `#include "MPU6050.H"` will have to be replaced with `#incluude "MPU.h"`
