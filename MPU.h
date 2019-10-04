@@ -80,7 +80,7 @@ public:
 };
 class MPU9250 : public MPU6050 {
 protected:
-  uint8_t mag_address = 0x0C;
+  uint8_t mag_address;
 public:
   MPU9250() : mag_address(AK8963_DEFAULT_ADDRESS) { address = MPU_DEFAULT_ADDRESS; };
   MPU9250(uint8_t addr, uint8_t mag_addr) : mag_address(mag_addr) { address = addr; };

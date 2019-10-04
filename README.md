@@ -10,9 +10,12 @@ A Wire based MPUxxxx library intended for ARM Cortex STM32 devices, but since it
 ## Documentation
 ### MPU6050
 ```c
+MPU6050();                                 //Default constructor, address is MPU_DEFAULT_ADDRESS
+MPU6050(uint8_t addr);                     //Allows you to set the address
 void begin(uint32_t speed);                //Initializes the device with a custom clock speed
-void begin(){ begin(10000); }              //Initializes the device with a clock speed of 10KHz
+void begin();                              //Initializes the device with a clock speed of 10KHz
 bool test();                               //Checks if the library can communicate to the device
+int16_t whoAmI();                          //Returns the WHO_AM_I id from the chip, or -1 if error
 void setInterruptsEnabled(bool en);        //Enables/disables interrupts
 void setAccelerationRange(uint8_t range);  //Sets the range of the accelerometer
 void setGyroscopeRange(uint8_t range);     //Sets the range of the gyrometer
@@ -31,7 +34,9 @@ bool bypassOn();                           //Indicates the state of the I2C bypa
 ### MPU9250
 ```c
 /* Derives functions from MPU6050 */ 
-uint8_t readMagnetometer(int16_t* buf);    //Reads the values from the magnetometer into a buffer, returns 1 on success
+MPU6050();                                 //Default constructor, addresses are MPU_DEFAULT_ADDRESS and AK8963_DEFAULT_ADDRESS
+MPU6050(uint8_t addr, uint8_t mag_addr);   //Allows you to set both the MPU address and AK8963 address
+uint8_t readMagnetometer(int16_t* buf);    //Reads the values (in uT) from the magnetometer into a buffer, returns 1 on success
 void setMagnetometerMode(AK8963Mode mode); //Sets the magnetometer's mode
 AK8963Mode getMagnetometerMode();          //Gets the magnetometer's mode
 bool isMagnetometerReady();                //Returns true if the magnetometer has data available
