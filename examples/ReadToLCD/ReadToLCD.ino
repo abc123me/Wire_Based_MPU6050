@@ -1,4 +1,4 @@
-#include "MPU6050.h"
+#include "MPU.h"
 #include "Wire.h"
 #include "LiquidCrystal.h"
 

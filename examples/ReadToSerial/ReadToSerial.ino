@@ -1,4 +1,4 @@
-#include "MPU6050.h"
+#include "MPU.h"
 #include "Wire.h"
 
 MPU6050 thingy; //Declare the MPU6050 device
